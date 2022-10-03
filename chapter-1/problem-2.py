@@ -13,3 +13,9 @@ def check_permutation(s1, s2):
     return sorted(s1) == sorted(s2)
 
 # Time complexity is O(n logn)
+
+# True
+print(check_permutation("word", "dwor"))
+
+# False
+print(check_permutation("abab", "bada"))
