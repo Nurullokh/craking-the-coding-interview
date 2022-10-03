@@ -21,6 +21,7 @@ def is_unique(input_str: str) -> bool:
     # if there is no duplicate, return True
     return True
 
+# Time complexity is O(n)
 
 # True
 print(is_unique("abc"))
