@@ -41,3 +41,14 @@ class LinkedList:
 
         new_node.next = self.head
         self.head = new_node
+
+    # insert method
+    def insert(self, prev_node, data):
+        if not prev_node:
+            print("Error: you have to give previous node")
+            return
+        new_node = Node(data)
+        new_node.next = prev_node.next
+        prev_node.next = new_node
+
+    
