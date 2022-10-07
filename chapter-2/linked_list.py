@@ -28,3 +28,11 @@ class LinkedList:
 
         last_node.next = new_node
     
+    # print the linked list one by one
+    def print_list(self):
+        curr_node = self.head
+        if curr_node:
+            print(curr_node.val)
+            curr_node = curr_node.next
+    
+    
