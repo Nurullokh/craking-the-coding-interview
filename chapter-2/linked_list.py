@@ -51,4 +51,27 @@ class LinkedList:
         new_node.next = prev_node.next
         prev_node.next = new_node
 
+    # delete by value
+    def delete_node(self, key):
+        curr_node = self.head
+
+        # checking if key is equal to head
+        if curr_node and curr_node.val == key:
+            self.head = curr_node.next
+            curr_node = None
+            return
+        prev = None
+        while curr_node and curr_node.val != key:
+            prev = curr_node
+            curr_node = curr_node.next
+        
+        # check whether key is found or not
+        if curr_node is None:
+            return
+        
+        prev.next = curr_node.next
+        curr_node = None
+    
+    
+
     
