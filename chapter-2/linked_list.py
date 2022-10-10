@@ -21,19 +21,18 @@ class LinkedList:
         new_node = Node(data)
         if self.head is None:
             self.head = new_node
-            return 
+            return
         last_node = self.head
         while last_node.next:
             last_node = last_node.next
-
         last_node.next = new_node
     
     # print the linked list one by one
     def print_list(self):
-        curr_node = self.head
-        if curr_node:
-            print(curr_node.val)
-            curr_node = curr_node.next
+        cur_node = self.head
+        while cur_node:
+            print(cur_node.val)
+            cur_node = cur_node.next
     
     # prepend method
     def prepend(self, data):
@@ -72,6 +71,12 @@ class LinkedList:
         prev.next = curr_node.next
         curr_node = None
     
-    
+
+# llist = LinkedList()
+# llist.append("A")
+# llist.append("B")
+# llist.append("C")
+# llist.append("D")
+# llist.print_list() 
 
     
