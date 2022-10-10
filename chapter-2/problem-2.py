@@ -24,6 +24,9 @@ def return_kth_to_last(head: LinkedList, k: int):
             head = head.next
     return "There is no such value in the given linked list"
 
+# Time complexity is O(n ** 2)
+# Space complexity is O(1)
+
 l = LinkedList()
 l.append("1")
 l.append("2")
@@ -53,4 +56,7 @@ def kth_to_last(head: LinkedList, k: int) -> Node:
         p1 = p1.next
         p2 = p2.next
     retunr p2
+
+# Time complexity is O(n)
+# Space complexity is O(1)
             
