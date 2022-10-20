@@ -29,6 +29,8 @@ def swap_nodes(val_1, val_2, head):
     curr_1.next, curr_2.next = curr_2.next, curr_1.next
     return head
 
+# Time complexity is O(n)
+
 head = swap_nodes("B", "D", llist.head)
 
 
