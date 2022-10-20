@@ -20,4 +20,4 @@ def len_recursive(head):
         return 0
     return 1 + len_recursive(head.next)
 
-print(len_recursive(llist.head))
+# print(len_recursive(llist.head))
