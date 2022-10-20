@@ -72,11 +72,11 @@ class LinkedList:
         curr_node = None
     
 
-# llist = LinkedList()
-# llist.append("A")
-# llist.append("B")
-# llist.append("C")
-# llist.append("D")
+llist = LinkedList()
+llist.append("A")
+llist.append("B")
+llist.append("C")
+llist.append("D")
 # llist.print_list() 
 
     
