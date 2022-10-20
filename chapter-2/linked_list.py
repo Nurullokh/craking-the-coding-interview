@@ -51,7 +51,7 @@ class LinkedList:
         prev_node.next = new_node
 
     # delete by value
-    def delete_node(self, key):
+    def delete_node_by_value(self, key):
         curr_node = self.head
 
         # checking if key is equal to head
@@ -70,7 +70,30 @@ class LinkedList:
         
         prev.next = curr_node.next
         curr_node = None
+        return self.head
     
+
+    def delete_node_by_pos(self, pos):
+        if self.head:
+            curr = self.head
+            if pos == 0:
+                self.head = curr.next
+                curr = None
+                return 
+            
+            prev = None
+            count = 0
+            while curr and count != pos:
+                prev = curr
+                curr = curr.next
+                count += 1
+            
+            if curr is None:
+                return 
+            
+            prev.next = curr.next 
+            curr = None
+        return self.head
 
 llist = LinkedList()
 llist.append("A")
