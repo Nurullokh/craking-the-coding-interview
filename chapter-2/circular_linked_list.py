@@ -41,4 +41,37 @@ class CircularLinkedList:
             cur = curr.next
             if curr == self.head:
                 break
+    
+    def remove(self, key):
+        if self.head:
+            if self.head.data == key:
+                curr = self.head
+                while curr.next != self.head:
+                    curr = curr.next
+                if self.head == self.head.next:
+                    self.head = None
+                else:
+                    curr.next = self.head.next
+                    self.head = self.head.next
+            else:
+                curr = self.head
+                prev = None
+                while curr.next != self.head:
+                    prev = curr
+                    curr = curr.next
+                    if curr.data == key:
+                        prev.next = curr.next
+                        curr = curr.next
+    
+
+    def __len__(self):
+        curr = self.head
+        count = 0
+        while curr:
+            count += 1
+            curr = curr.next
+            if curr == self.head:
+                break
+        return count
+
         
