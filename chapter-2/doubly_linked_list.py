@@ -38,3 +38,36 @@ class DoublyLinkedList:
         while curr:
             print(curr.data)
             curr = curr.next
+
+    def add_after_node(self, key, data):
+        curr = self.head
+        while curr:
+            if curr.next is None and curr.data == key:
+                self.append(data)
+                return
+            elif curr.data == key:
+                new_node = Node(data)
+                nxt = curr.next
+                curr.next = new_node
+                new_node.next = nxt
+                new_node.prev = curr
+                nxt.prev = new_node
+                return
+            curr = curr.next
+        
+    def add_before_node(self, key, data):
+        curr = self.head
+        while curr:
+            if curr.prev is None and curr.data == key:
+                self.prepend(data)
+                return
+            elif curr.data == key:
+                new_node = Node(data)
+                prev = curr.prev
+                prev.next = new_node
+                curr.prev = new_node
+                new_node.next = curr
+                new_node.prev = prev
+                return
+            curr = curr.next
+    
