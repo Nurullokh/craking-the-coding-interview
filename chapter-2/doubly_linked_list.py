@@ -70,4 +70,37 @@ class DoublyLinkedList:
                 new_node.prev = prev
                 return
             curr = curr.next
+        
+    def delete_node(self, key):
+        curr = self.head
+        while curr:
+            if curr.data == key and curr == self.head:
+                if curr.next is None:
+                    curr = None
+                    self.head = None
+                    return
+                else:
+                    nxt = curr.next
+                    curr.next = None
+                    nxt.prev = None
+                    curr = None
+                    self.head = nxt
+                    return
+            elif curr.data == key:
+                if curr.next:
+                    nxt = curr.next
+                    prev = curr.prev
+                    prev.next = nxt
+                    nxt.prev = prev
+                    curr.next = None
+                    curr.prev = None
+                    curr = None
+                    return
+                else:
+                    prev = curr.prev
+                    prev.next = None
+                    curr.prev = None
+                    curr = None
+                    return
+            curr = curr.next
     
