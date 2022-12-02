@@ -15,6 +15,14 @@ class BinaryTree:
             traversal = self.preorder_print(start.left, traversal)
             traversal = self.preorder_print(start.right, traversal)
         return traversal
+    
+    def inorder_print(self, start, traversal):
+        """Left->Root->Right"""
+        if start:
+            traversal = self.inorder_print(start.left, traversal)
+            traversal += str(start.value) + '-'
+            traversal = self.inorder_print(start.right, traversal)
+        return traversal
 
 tree = BinaryTree(1)
 tree.root.left = Node(2)
